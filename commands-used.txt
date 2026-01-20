@@ -1,0 +1,15 @@
+hashcat --version
+john --version
+
+echo -n password123 | md5sum
+echo -n password123 | sha1sum
+echo -n password123 | sha256sum
+
+john --format=raw-md5 md5.txt --wordlist=/usr/share/wordlists/rockyou.txt
+john --show --format=raw-md5 md5.txt
+
+john --format=raw-sha1 sha1.txt --wordlist=/usr/share/wordlists/rockyou.txt
+john --show --format=raw-sha1 sha1.txt
+
+john --format=raw-sha256 sha256.txt --wordlist=/usr/share/wordlists/rockyou.txt
+john --show --format=raw-sha256 sha256.txt
